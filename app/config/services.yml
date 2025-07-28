@@ -1,0 +1,57 @@
+core:
+  database: App\Core\Database
+  session: App\Core\Session
+  validator: App\Core\Validator
+  router: App\Core\Router
+  imageServ: App\Core\ImageService
+
+abstract:
+  abstractRepo: App\Core\Abstract\AbstractRepository
+  abstractController: App\Core\Abstract\AbstractController
+  abstractEntity: App\Core\Abstract\AbstractEntity
+
+services:
+  securityServ: App\Service\AchatService
+  clientServ: App\Service\ClientService
+  compteurServ: App\Service\CompteurService
+  logAchatServ: App\Service\LogAchatService
+  trancheServ: App\Service\TrancheService
+  woyofalServ: App\Service\WoyofalService
+ 
+
+repositories:
+  AchatRepo: App\Repository\AchatRepository
+  clientRepo: App\Repository\ClientRepository
+  compteurRepo: App\Repository\CompteurRepository
+  logAchatRepo: App\Repository\LogAchatRepository
+
+interfaces:
+  IRepository: App\Repository\IRepository
+  IAchatRepository: App\Repository\AchatRepository
+  IClientRepository: App\Repository\ClientRepository
+  ICompteurRepository: App\Repository\CompteurRepository
+  ILogAchatRepository: App\Repository\LogAchatRepository
+
+controllers:
+  homeController: App\Controller\HomeController
+  authController: App\Controller\AuthController
+  dashboardController: App\Controller\DashboardController
+  achatController: App\Controller\AchatController
+  clientController: App\Controller\ClientController
+  compteurController: App\Controller\CompteurController
+  logAchatController: App\Controller\LogAchatController
+
+# Ajout des bindings pour résolution par nom complet de classe
+bindings:
+  IAchatRepository: App\Repository\AchatRepository
+  IClientRepository: App\Repository\ClientRepository  
+  ICompteurRepository: App\Repository\CompteurRepository
+  ILogAchatRepository: App\Repository\LogAchatRepository
+  IRepository: App\Repository\IRepository
+  AchatService: App\Service\AchatService
+  ClientService: App\Service\ClientService
+  CompteurService: App\Service\CompteurService
+  LogAchatService: App\Service\LogAchatService
+  TrancheService: App\Service\TrancheService
+  WoyofalService: App\Service\WoyofalService
+  PDO: App\Core\Database
